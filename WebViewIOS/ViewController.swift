@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WKNavigationDelegate {
 
+    @IBOutlet weak var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        var link = URL(string: "https://www.fiap.com.br")!
+        webView.load(URLRequest(url: link))
+        
     }
-
 
 }
 
